@@ -1,4 +1,5 @@
 disable scroll
 ===
 
-Prevent page scroll from `scrollbar, mousewheel, touchmove` events.
+Prevent page scrolling.  
+Support `scrollbar, mousewheel, touchmove, keydown` events.
