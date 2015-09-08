@@ -11,11 +11,11 @@ var disableScroll = {
     lockToScrollPos: [0, 0],
 
     /**
-     * Disable page Scroll
+     * Disable Page Scroll
      * @external Node
      *
-     * @param {external:Node} element - DOM Element, usually document.body
-     * @param {object} options - Change the initial options
+     * @param {external:Node} [element] - DOM Element, usually document.body
+     * @param {object} [options] - Change the initial options
      */
     on: function (element, options) {
         this.element = element || document.body;
@@ -32,23 +32,25 @@ var disableScroll = {
                 this.element.scrollLeft,
                 this.element.scrollTop
             ];
-            document.addEventListener('scroll', this._handleScrollbar.bind(this));
+            this._disableScrollbarFn = this._handleScrollbar.bind(this);
+            document.addEventListener('scroll', this._disableScrollbarFn);
         }
 
         if (this.options.disableKeys) {
-            document.addEventListener('keydown', this._handleKeydown.bind(this));
+            this._disableKeysFn = this._handleKeydown.bind(this);
+            document.addEventListener('keydown', this._disableKeysFn);
         }
     },
 
     /**
-     * Re-enable page scroll
+     * Re-enable page scrolls
      */
     off: function () {
         document.removeEventListener('mousewheel', this._handleWheel);
         document.removeEventListener('DOMMouseScroll', this._handleWheel);
         document.removeEventListener('touchmove', this._handleWheel);
-        document.removeEventListener('scroll', this._handleScrollbar.bind(this));
-        document.removeEventListener('keydown', this._handleKeydown.bind(this));
+        document.removeEventListener('scroll', this._disableScrollbarFn);
+        document.removeEventListener('keydown', this._disableKeysFn);
     },
 
     _handleWheel: function (e) {
@@ -71,7 +73,9 @@ var disableScroll = {
     _extend: function (obj) {
         Object.keys(Array.prototype.slice(arguments, 1)).forEach(function (source) {
             for (var prop in source) {
-                obj[prop] = source[prop];
+                if (source.hasOwnProperty(prop)) {
+                    obj[prop] = source[prop];
+                }
             }
         });
         return obj;
