@@ -10,9 +10,6 @@
   "bugs": {
     "url": "https://github.com/gilbarbara/disable-scroll/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "scroll"
   ],
