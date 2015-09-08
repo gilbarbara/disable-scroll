@@ -4,7 +4,7 @@ disable scroll
 <a href="https://www.npmjs.com/package/disable-scroll" target="_blank">![](https://badge.fury.io/js/disable-scroll.svg)</a> <a href="https://travis-ci.org/gilbarbara/disable-scroll" target="_blank">![](https://travis-ci.org/gilbarbara/disable-scroll.svg)</a>
 
 **Prevent page scrolling like a boss.**  
-Support `scrollbar, mousewheel, touchmove, keydown` events.
+Supports `scrollbar, mousewheel, touchmove, keydown` events.
 
 ## Install
 
@@ -21,13 +21,13 @@ disableScroll.on();
 disableScroll.off();
 ```
 
-## Configuration
+## API
 
 ### .on([element], [options])
-Add the event listeners and scroll.
+Disable page scrolling by adding event listeners and locking the scroll position.
 
 - `[element]` - DOM Element. Defaults to `document.body`
-- `[options]` - Change the initial options. Defaults to:
+- `[options]` - Change the initial options. Defaults to: 
 
 ```javascript
 {
@@ -39,4 +39,8 @@ Add the event listeners and scroll.
 ```
 
 ### .off()
-Remove the listeners.
+Re-enable page scrolling and remove the listeners.
+
+---
+
+Inspired by [jquery-disablescroll](https://github.com/ultrapasty/jquery-disablescroll)
