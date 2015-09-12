@@ -69,8 +69,7 @@ gulp.task('gh-pages', function () {
         .pipe($.ghPages({
             branch: 'gh-pages',
             message: commitMessage,
-            force: true,
-            push: false
+            force: true
         }));
 
     return merge(clean, push);
