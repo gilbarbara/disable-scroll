@@ -6,6 +6,8 @@ disable scroll
 **Prevent page scrolling like a boss.**  
 Supports `scrollbar, mousewheel, touchmove, keydown` events.
 
+View the demo <a href="http://gilbarbara.github.io/disable-scroll/" target="_blank">here</a>.
+
 ## Install
 
 ### npm
