@@ -1,12 +1,12 @@
 disable scroll
 ===
 
-<a href="https://www.npmjs.com/package/disable-scroll" target="_blank">![](https://badge.fury.io/js/disable-scroll.svg)</a> <a href="https://travis-ci.org/gilbarbara/disable-scroll" target="_blank">![](https://travis-ci.org/gilbarbara/disable-scroll.svg)</a>
+<a href="https://www.npmjs.com/package/disable-scroll" target="_blank">![](https://badge.fury.io/js/disable-scroll.svg)</a> ![](https://badge.fury.io/bo/disable-scroll.svg) <a href="https://travis-ci.org/gilbarbara/disable-scroll" target="_blank">![](https://travis-ci.org/gilbarbara/disable-scroll.svg)</a>
 
 **Prevent page scrolling like a boss.**  
 Supports `scrollbar, mousewheel, touchmove, keydown` events.
 
-View the demo <a href="http://gilbarbara.github.io/disable-scroll/" target="_blank">here</a>.
+<a href="http://gilbarbara.github.io/disable-scroll/" target="_blank">Demo</a>
 
 ## Install
 
