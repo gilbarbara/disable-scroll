@@ -8,18 +8,36 @@ Supports `scrollbar, mousewheel, touchmove, keydown` events.
 
 ## Install
 
+### npm
 ```javascript
 npm install --save disable-scroll
 ```
 
-## Usage
+and require it
+
 ```javascript
 var disableScroll = require('disable-scroll');
-
-disableScroll.on();
-...
-disableScroll.off();
 ```
+
+### bower
+```javascript
+bower install --save disable-scroll
+```
+
+Reference the script in your html file
+
+```html
+<script src="disable-scroll.min.js"></script>
+```
+
+## Usage
+
+```javascript
+disableScroll.on(); // prevent scrolling
+...
+disableScroll.off(); // re-enable scroll
+```
+
 
 ## API
 
@@ -39,7 +57,7 @@ Disable page scrolling by adding event listeners and locking the scroll position
 ```
 
 ### .off()
-Re-enable page scrolling and remove the listeners.
+Re-enable page scrolling and destroy the listeners.
 
 ---
 
