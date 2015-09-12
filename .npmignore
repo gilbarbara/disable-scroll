@@ -1,0 +1,7 @@
+.editorconfig
+.eslintrc
+.hooks
+.gitignore
+.travis.yml
+bower.json
+gulpfile.js
