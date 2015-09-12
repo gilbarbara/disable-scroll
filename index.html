@@ -62,7 +62,8 @@
     </style>
     <script src="dist/disable-scroll.js"></script>
     <script>
-        var colors = ['#5bc0eb', '#fde74c', '#9bc53d', '#e55934', '#fa7921'],
+
+        var colors = ['#5bc0eb', '#fde74c', '#9bc53d', '#e55934', '#fa7921', '#8F7892', '#f25f5c', '#ffe066', '#247ba0', '#98A584'],
                 controls,
                 steps = '',
                 h = 200,
@@ -91,8 +92,8 @@
                 });
             }
 
-            for (i = i; i <= 4000;) {
-                steps += '<div style="background-color:' + colors[c % 5] + '; height: ' + h + 'px;">' + i + '</div>';
+            for (i = i; i <= 5000;) {
+                steps += '<div style="background-color:' + colors[c % 10] + '; height: ' + h + 'px;">' + i + '</div>';
                 i += 200;
                 c++;
             }
@@ -107,10 +108,9 @@
 
 <header>
     <h1>disable-scroll</h1>
-
     <div class="controls">
-        <a href="#" class="on" data-type="disable">turn it off</a>
-        <a href="#" class="off disable" data-type="enable">turn it on</a>
+        <a href="#" class="on" data-type="disable">turn it on</a>
+        <a href="#" class="off disable" data-type="enable">turn it off</a>
     </div>
 </header>
 <div class="steps"></div>
