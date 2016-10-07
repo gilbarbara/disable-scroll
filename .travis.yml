@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-  - "0.12"
-  - "4"
-  - "5"
-  - "6"
+- '4'
+- '5'
+- '6'
 deploy:
   provider: npm
   email: gilbarbara@gmail.com
   api_key:
-    secure: h5m4h06wL4TTM8YMfYHdE3clgAPObFFMCtgkf8MzrWEYLJxly9BO743uXRvD6+XUHWX4Iq045RZuLgk2vJJOoxIYhcC0aQzvZo7DCbLp2FPNLGdQ33gTJ2yKwKpLea/uHZlcUIuegwYNg2AuhwV+K9qMMApPUSSF1EMDZRbb5+tZlJxwiJ1rBHmyy8XAlc6raVTYox4ZDq1BGzHdorrUaD3rm7GO0iM4nprszxjVdp//tm+nKTiEPK1Mp33jEoapCvofFiEjN0mFiKH0MNlWJDbgFyq2dEd6l3AdaezZpQliGpLJea02iIn6aHIjd34/kXrDBov5D0OLPQ9cjyUfcZJ8t1KchCjRhDOxMZx3tA3u7bfagBbH+Y74ucWfNwbyL+5TrEheliw8y6w8YPQMwPm1T6dVIZ9wynJ7E2MHqI+BeV3T3HsWe3TjbHrRf/2Pha3QfYNnYsv4QY8FvZXMpckJPxU2n9+e5HA+CKKspOVjSQVKg4JI2gBECrr7psU19501lyU5mZYt5R40zo4xU3kstJzaHgCvm1YDOYBZMoy29XufWpWy44LHQ9P+LAzLmFR6/ibKLEkRnyM29ZxiW7330K/De187exuNpR0LcrkOyx0n5QNMPrtTAWZsmPsag5R8gVDZwTER973+T1uh6/pNbKJNHVeLQeRPxd9JroQ=
+    secure: MYDGDAsilCBwjjuYU28cOxE2zk5EWG4XrowL2yJW53v4p3h/8xqAA8VuSd0S31D3TIw/nN+tEO8o9GVnTiZallUNZToN60lDE4YMeWPovOADoDY7IubAy/O6rW+qoJOxysCznxaGAbWwop9lf51gCWkpbr8zkrI4VvCB1l6hMXxOtlgspI627yvpxF0pWA8SWZEyJ8z0QHFWv3wBKYFkopb3oyMKHCtkjy9z1ZkBfewNSiw0qxC0BkbAgHaUx1ROFQ9OJF89ZOMk7Z0qc5gkus9TG58O0RQU1scrhbe+XbDXDXsj0JFxuT2ehzsPP854FCV3TIIfUSUTw5A8oqY44/CMQk679Cce8fxVu+4ji38oHXKsRb/ewbVN5Q2hBXeO873GRyGKWqHDXfkRso2lUmYArVhc3ZdX8+QdBjlTug1EzRreDsq/15ru+8HqDRt/lD/qeTU/FZU5vFJoYoyVEAbh5Aumg/krubUS9MhCUfEPGZJ9+Wpx6CW034ylfJIagWw1za4B44U/TQji1EAQ+G72EYZVosqS91ieAlsqS/SBi+TVc1unG3w78midfQkw+ECoUpgNQIH50pr/b/vls25OzqDcA921EGBIEQMRXPEV5FmVx5gxT32w26O2gOw5krq2zSjKEkUTW9H0QRgkT0/mxE8r2jyXVNlHq/U0ORI=
   on:
     tags: true
     repo: gilbarbara/disable-scroll
