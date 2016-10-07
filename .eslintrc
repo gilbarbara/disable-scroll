@@ -2,12 +2,7 @@
   "env": {
     "amd": true,
     "browser": true,
-    "jquery": true,
-    "mocha": true,
     "node": true
-  },
-  "globals": {
-    "$": true
   },
   "rules": {
     "strict": 0,
@@ -122,6 +117,7 @@
     "consistent-this": [1, "self"],
     "eol-last": 1,
     "key-spacing": 1,
+    "keyword-spacing": 1,
     "lines-around-comment": [0, { "beforeBlockComment": true, "beforeLineComment": true }],
     "linebreak-style": [1, "unix"],
     "max-nested-callbacks": [2, 4],
@@ -156,11 +152,9 @@
         "after": true
       }
     ],
-    "space-after-keywords": 1,
     "space-before-blocks": 1,
     "space-before-function-paren": 1,
     "space-infix-ops": 1,
-    "space-return-throw-case": 1,
     "space-unary-ops": 1,
     // Node
     "callback-return": [2, ["callback", "cb", "next"]],
