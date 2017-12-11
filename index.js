@@ -63,7 +63,7 @@ var disableScroll = {
 
   _handleKeydown: function (event) {
     for (var i = 0; i < this.options.scrollEventKeys.length; i++) {
-      if (event.keyCode === this.options.scrollEventKeys[i]) {
+      if (event.keyCode === this.options.scrollEventKeys[i] && (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA')) {
         event.preventDefault();
         return false;
       }
