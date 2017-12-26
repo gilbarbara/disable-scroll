@@ -40,7 +40,7 @@ class DisableScroll {
     const { disableKeys, disableScrollbar, disableWheel } = this.options;
 
     if (disableWheel) {
-      document.addEventListener('mousewheel', this.handleWheel);
+      document.addEventListener('wheel', this.handleWheel);
       document.addEventListener('touchmove', this.handleWheel);
     }
 
@@ -63,7 +63,7 @@ class DisableScroll {
   off() {
     if (!canUseDOM) return;
 
-    document.removeEventListener('mousewheel', this.handleWheel);
+    document.removeEventListener('wheel', this.handleWheel);
     document.removeEventListener('touchmove', this.handleWheel);
     document.removeEventListener('scroll', this.handleScrollbar);
     document.removeEventListener('keydown', this.handleKeydown);
