@@ -18,6 +18,7 @@ deploy:
   api_key:
     secure: MYDGDAsilCBwjjuYU28cOxE2zk5EWG4XrowL2yJW53v4p3h/8xqAA8VuSd0S31D3TIw/nN+tEO8o9GVnTiZallUNZToN60lDE4YMeWPovOADoDY7IubAy/O6rW+qoJOxysCznxaGAbWwop9lf51gCWkpbr8zkrI4VvCB1l6hMXxOtlgspI627yvpxF0pWA8SWZEyJ8z0QHFWv3wBKYFkopb3oyMKHCtkjy9z1ZkBfewNSiw0qxC0BkbAgHaUx1ROFQ9OJF89ZOMk7Z0qc5gkus9TG58O0RQU1scrhbe+XbDXDXsj0JFxuT2ehzsPP854FCV3TIIfUSUTw5A8oqY44/CMQk679Cce8fxVu+4ji38oHXKsRb/ewbVN5Q2hBXeO873GRyGKWqHDXfkRso2lUmYArVhc3ZdX8+QdBjlTug1EzRreDsq/15ru+8HqDRt/lD/qeTU/FZU5vFJoYoyVEAbh5Aumg/krubUS9MhCUfEPGZJ9+Wpx6CW034ylfJIagWw1za4B44U/TQji1EAQ+G72EYZVosqS91ieAlsqS/SBi+TVc1unG3w78midfQkw+ECoUpgNQIH50pr/b/vls25OzqDcA921EGBIEQMRXPEV5FmVx5gxT32w26O2gOw5krq2zSjKEkUTW9H0QRgkT0/mxE8r2jyXVNlHq/U0ORI=
   on:
+    branch: master
     tags: true
     repo: gilbarbara/disable-scroll
 addons:

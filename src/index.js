@@ -8,8 +8,6 @@ const canUseDOM = !!(
 
 class DisableScroll {
   constructor() {
-    if (!canUseDOM) return;
-
     this.options = {
       disableWheel: true,
       disableScroll: true,
@@ -41,11 +39,13 @@ class DisableScroll {
 
     const { disableKeys, disableScroll, disableWheel } = this.options;
 
+    /* istanbul ignore else */
     if (disableWheel) {
       document.addEventListener('wheel', this.handleWheel);
       document.addEventListener('touchmove', this.handleWheel);
     }
 
+    /* istanbul ignore else */
     if (disableScroll) {
       this.lockToScrollPos = [
         this.element.scrollLeft || this.element.scrollX,
@@ -54,6 +54,7 @@ class DisableScroll {
       document.addEventListener('scroll', this.handleScroll);
     }
 
+    /* istanbul ignore else */
     if (disableKeys) {
       document.addEventListener('keydown', this.handleKeydown);
     }
@@ -82,10 +83,12 @@ class DisableScroll {
   handleKeydown = (e) => {
     let keys = [...this.options.keyboardKeys];
 
+    /* istanbul ignore else */
     if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
       keys = keys.slice(1);
     }
 
+    /* istanbul ignore else */
     if (keys.includes(e.keyCode)) {
       e.preventDefault();
     }

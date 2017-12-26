@@ -11,6 +11,9 @@ module.exports = {
     'src',
     './',
   ],
+  setupFiles: [
+    '<rootDir>/test/__setup__/index.js',
+  ],
   testRegex: '/test/.*?\\.(test|spec)\\.js$',
   testURL: 'http://localhost:3000',
   collectCoverage: false,
@@ -19,10 +22,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      branches: 60,
-      functions: 60,
-      lines: 60,
-      statements: 60
+      branches: 75,
+      functions: 75,
+      lines: 75,
+      statements: 75
     },
   },
   verbose: true,
