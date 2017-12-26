@@ -41,7 +41,6 @@ class DisableScroll {
 
     if (disableWheel) {
       document.addEventListener('mousewheel', this.handleWheel);
-      document.addEventListener('DOMMouseScroll', this.handleWheel);
       document.addEventListener('touchmove', this.handleWheel);
     }
 
@@ -65,7 +64,6 @@ class DisableScroll {
     if (!canUseDOM) return;
 
     document.removeEventListener('mousewheel', this.handleWheel);
-    document.removeEventListener('DOMMouseScroll', this.handleWheel);
     document.removeEventListener('touchmove', this.handleWheel);
     document.removeEventListener('scroll', this.handleScrollbar);
     document.removeEventListener('keydown', this.handleKeydown);
