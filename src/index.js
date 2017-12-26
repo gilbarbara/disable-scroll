@@ -1,3 +1,5 @@
+import 'scrollingelement';
+
 const canUseDOM = !!(
   typeof window !== 'undefined' &&
   window.document &&
@@ -17,7 +19,7 @@ class DisableScroll {
       // left: 37, up: 38, right: 39, down: 40
     };
 
-    this.element = document.body;
+    this.element = canUseDOM ? document.scrollingElement : null;
     this.lockToScrollPos = [0, 0];
   }
 
