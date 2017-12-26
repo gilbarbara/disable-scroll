@@ -1,35 +1,30 @@
 disable scroll
 ===
 
-<a href="https://www.npmjs.com/package/disable-scroll" target="_blank">![](https://badge.fury.io/js/disable-scroll.svg)</a> ![](https://badge.fury.io/bo/disable-scroll.svg) <a href="https://travis-ci.org/gilbarbara/disable-scroll" target="_blank">![](https://travis-ci.org/gilbarbara/disable-scroll.svg)</a>
+[![NPM version](https://badge.fury.io/js/disable-scroll.svg)](https://www.npmjs.com/package/disable-scroll)
+[![build status](https://travis-ci.org/gilbarbara/disable-scroll.svg)](https://travis-ci.org/gilbarbara/disable-scroll)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6a4bbda8255037dca13f/maintainability)](https://codeclimate.com/github/gilbarbara/disable-scroll/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6a4bbda8255037dca13f/test_coverage)](https://codeclimate.com/github/gilbarbara/disable-scroll/test_coverage)
+
+View the [demo](https://84vn36m178.codesandbox.io/)
+
 
 **Prevent page scrolling like a boss.**  
-Supports `scrollbar, mousewheel, touchmove, keydown` events.
+Supports `scroll, wheel, touchmove, keydown` events.
 
-<a href="http://gilbarbara.github.io/disable-scroll/" target="_blank">Demo</a>
+[Demo](https://v3yxl1z2w3.codesandbox.io/)
 
-## Install
+## Setup
 
 ### npm
-```javascript
+```bash
 npm install --save disable-scroll
 ```
 
-and require it
+and import it
 
 ```javascript
-var disableScroll = require('disable-scroll');
-```
-
-### bower
-```javascript
-bower install --save disable-scroll
-```
-
-Reference the script in your html file
-
-```html
-<script src="disable-scroll.min.js"></script>
+import disableScroll from 'disable-scroll';
 ```
 
 ## Usage
@@ -40,26 +35,25 @@ disableScroll.on(); // prevent scrolling
 disableScroll.off(); // re-enable scroll
 ```
 
-
 ## API
 
 ### .on([element], [options])
-Disable page scrolling by adding event listeners and locking the scroll position.
+Disable page scroll by adding event listeners and locking the scroll position.
 
-- `[element]` - DOM Element. Defaults to `document.body`
+- `[element]` - DOM Element. Defaults to `document.scrollingElement`
 - `[options]` - Change the initial options. Defaults to: 
 
 ```javascript
 {
     disableWheel: true,
-    disableScrollbar: true,
+    disableScroll: true,
     disableKeys: true,
-    scrollEventKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40]
+    keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40]
 }
 ```
 
 ### .off()
-Re-enable page scrolling and destroy the listeners.
+Re-enable page scrolling and remove the listeners.
 
 ---
 

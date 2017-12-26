@@ -1,4 +1,6 @@
 .publish
 .tmp
-bower_components
+coverage/
+es/
+lib/
 node_modules
