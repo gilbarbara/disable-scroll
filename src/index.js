@@ -48,8 +48,8 @@ class DisableScroll {
 
     if (disableScroll) {
       this.lockToScrollPos = [
-        this.element.scrollX,
-        this.element.scrollY
+        this.element.scrollLeft || this.element.scrollX,
+        this.element.scrollTop || this.element.scrollY
       ];
       document.addEventListener('scroll', this.handleScroll);
     }
