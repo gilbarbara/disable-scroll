@@ -49,11 +49,10 @@
     "build:es": "cross-env NODE_ENV=production babel src -d es",
     "watch": "npm run build && watch-run -p 'src/**/*.js' npm run build:es",
     "clean": "rimraf es && rimraf lib",
-    "lint": "eslint --ext .js --ext .jsx src test",
+    "lint": "eslint src test",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "bundlesize": "bundlesize",
-    "precommit": "npm run lint && npm test && bundlesize",
+    "precommit": "npm run lint && npm test",
     "prepublishOnly": "npm run build"
   }
 }
