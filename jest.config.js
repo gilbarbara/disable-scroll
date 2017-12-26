@@ -11,7 +11,7 @@ module.exports = {
     'src',
     './',
   ],
-  testRegex: '/src/.*?\\.(test|spec)\\.js$',
+  testRegex: '/test/.*?\\.(test|spec)\\.js$',
   testURL: 'http://localhost:3000',
   collectCoverage: false,
   collectCoverageFrom: [
@@ -19,10 +19,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      branches: 15,
-      functions: 15,
-      lines: 15,
-      statements: 15
+      branches: 60,
+      functions: 60,
+      lines: 60,
+      statements: 60
     },
   },
   verbose: true,

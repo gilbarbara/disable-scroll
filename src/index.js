@@ -77,10 +77,13 @@ class DisableScroll {
     window.scrollTo(this.lockToScrollPos[0], this.lockToScrollPos[1]);
   };
 
-  handleKeydown = (event) => {
+  handleKeydown = (e) => {
     for (let i = 0; i < this.options.scrollEventKeys.length; i++) {
-      if (event.keyCode === this.options.scrollEventKeys[i]) {
-        event.preventDefault();
+      if (
+        e.keyCode === this.options.scrollEventKeys[i]
+        && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)
+      ) {
+        e.preventDefault();
         return;
       }
     }

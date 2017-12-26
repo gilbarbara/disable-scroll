@@ -1,4 +1,4 @@
-import disableScroll from './index';
+import disableScroll from '../src/index';
 
 global.scrollTo = () => {};
 
