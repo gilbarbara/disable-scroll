@@ -6,9 +6,6 @@ disable scroll
 [![Maintainability](https://api.codeclimate.com/v1/badges/6a4bbda8255037dca13f/maintainability)](https://codeclimate.com/github/gilbarbara/disable-scroll/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6a4bbda8255037dca13f/test_coverage)](https://codeclimate.com/github/gilbarbara/disable-scroll/test_coverage)
 
-View the [demo](https://84vn36m178.codesandbox.io/)
-
-
 **Prevent page scrolling like a boss.**  
 Supports `scroll, wheel, touchmove, keydown` events.
 
