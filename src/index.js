@@ -82,8 +82,7 @@ class DisableScroll {
   };
 
   handleKeydown = (e) => {
-    let keys;
-    
+    let keys = [...this.options.keyboardKeys];
 
     /* istanbul ignore else */
     if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
