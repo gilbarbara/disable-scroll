@@ -12,7 +12,8 @@ class DisableScroll {
       disableWheel: true,
       disableScroll: true,
       disableKeys: true,
-      keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40]
+      keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
+      authorizedInInputs: [32, 37, 38, 39, 40]
       // space: 32, page up: 33, page down: 34, end: 35, home: 36
       // left: 37, up: 38, right: 39, down: 40
     };
@@ -81,11 +82,12 @@ class DisableScroll {
   };
 
   handleKeydown = (e) => {
-    let keys = [...this.options.keyboardKeys];
+    let keys;
+    
 
     /* istanbul ignore else */
     if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
-      keys = keys.slice(1);
+      keys = this.options.authorizedInInputs;
     }
 
     /* istanbul ignore else */
