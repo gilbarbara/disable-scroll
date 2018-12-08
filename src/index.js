@@ -1,9 +1,9 @@
 import 'scrollingelement';
 
 const canUseDOM = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
+  typeof window !== 'undefined'
+  && window.document
+  && window.document.createElement
 );
 
 class DisableScroll {
