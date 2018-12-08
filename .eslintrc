@@ -9,8 +9,7 @@
     "cy": false
   },
   "plugins": [
-    "babel",
-    "flowtype"
+    "babel"
   ],
   "rules": {
     "arrow-body-style": [
