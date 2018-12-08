@@ -1,23 +1,37 @@
 ---
-engines:
-  eslint:
-    enabled: true
-    channel: "eslint-4"
-    checks:
-      import/no-duplicates:
-        enabled: false
-      no-template-curly-in-string:
-        enabled: false
-      import/no-unresolved:
-        enabled: false
-      import/no-extraneous-dependencies:
-        enabled: false
-      import/no-named-as-default-member:
-        enabled: false
-ratings:
-  paths:
-  - "**.js"
-exclude_paths:
+version: "2"
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 500
+  method-complexity:
+    config:
+      threshold: 20
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 50
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    config:
+      threshold: 100
+  identical-code:
+    config:
+      threshold: 20
+exclude_patterns:
   - coverage/**/*
   - es/**/*
   - lib/**/*
