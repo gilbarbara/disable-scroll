@@ -1,5 +1,3 @@
-import 'scrollingelement';
-
 const canUseDOM = !!(
   typeof window !== 'undefined'
   && window.document
@@ -8,6 +6,8 @@ const canUseDOM = !!(
 
 class DisableScroll {
   constructor() {
+    this.element = null;
+    this.lockToScrollPos = [0, 0];
     this.options = {
       disableWheel: true,
       disableScroll: true,
@@ -18,8 +18,11 @@ class DisableScroll {
       // left: 37, up: 38, right: 39, down: 40
     };
 
-    this.element = canUseDOM ? document.scrollingElement : null;
-    this.lockToScrollPos = [0, 0];
+    /* istanbul ignore else */
+    if (canUseDOM) {
+      require('scrollingelement');
+      this.element = document.scrollingElement;
+    }
   }
 
   /**
