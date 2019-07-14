@@ -42,8 +42,8 @@ class DisableScroll {
 
     /* istanbul ignore else */
     if (disableWheel) {
-      document.addEventListener('wheel', this.handleWheel);
-      document.addEventListener('touchmove', this.handleWheel);
+      document.addEventListener('wheel', this.handleWheel, { passive: false });
+      document.addEventListener('touchmove', this.handleWheel, { passive: false });
     }
 
     /* istanbul ignore else */
@@ -52,12 +52,12 @@ class DisableScroll {
         this.element.scrollLeft || this.element.scrollX,
         this.element.scrollTop || this.element.scrollY
       ];
-      document.addEventListener('scroll', this.handleScroll);
+      document.addEventListener('scroll', this.handleScroll, { passive: false });
     }
 
     /* istanbul ignore else */
     if (disableKeys) {
-      document.addEventListener('keydown', this.handleKeydown);
+      document.addEventListener('keydown', this.handleKeydown, { passive: false });
     }
   }
 
