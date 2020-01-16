@@ -70,10 +70,10 @@ class DisableScroll {
   off() {
     if (!canUseDOM) return;
 
-    document.removeEventListener('wheel', this.handleWheel);
-    document.removeEventListener('touchmove', this.handleWheel);
-    document.removeEventListener('scroll', this.handleScroll);
-    document.removeEventListener('keydown', this.handleKeydown);
+    document.removeEventListener('wheel', this.handleWheel, { passive: false });
+    document.removeEventListener('touchmove', this.handleWheel, { passive: false });
+    document.removeEventListener('scroll', this.handleScroll, { passive: false });
+    document.removeEventListener('keydown', this.handleKeydown, { passive: false });
   }
 
   handleWheel = (e) => {
