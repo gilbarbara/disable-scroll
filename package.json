@@ -3,10 +3,6 @@
   "version": "0.5.1",
   "description": "Prevent page scroll",
   "author": "Gil Barbara <gilbarbara@gmail.com>",
-  "keywords": [
-    "scroll"
-  ],
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gilbarbara/disable-scroll.git"
@@ -15,81 +11,78 @@
     "url": "https://github.com/gilbarbara/disable-scroll/issues"
   },
   "main": "lib/index.js",
-  "module": "es/index.js",
+  "module": "esm/index.js",
   "files": [
-    "es",
+    "esm",
     "lib",
     "src"
   ],
-  "dependencies": {
-    "scrollingelement": "^1.5.2"
-  },
+  "types": "esm",
+  "sideEffects": true,
+  "license": "MIT",
+  "keywords": [
+    "scroll"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/plugin-proposal-do-expressions": "^7.8.3",
-    "@babel/plugin-proposal-export-default-from": "^7.8.3",
-    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
-    "@babel/plugin-proposal-function-sent": "^7.8.3",
-    "@babel/plugin-proposal-json-strings": "^7.8.3",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.8.3",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
-    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
-    "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
-    "@babel/plugin-proposal-throw-expressions": "^7.8.3",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-syntax-import-meta": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
-    "babel-plugin-array-includes": "^2.0.3",
-    "bundlesize": "^0.18.0",
-    "core-js": "^3.6.4",
-    "cross-env": "^6.0.3",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "husky": "^4.0.10",
-    "jest": "^24.9.0",
-    "rimraf": "^3.0.0",
-    "watch-run": "^1.2.5"
+    "@gilbarbara/tsconfig": "^0.1.0",
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "@types/jest": "^26.0.16",
+    "@types/node": "^14.14.10",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "jest-watch-typeahead": "^0.6.1",
+    "prettier": "^2.2.1",
+    "repo-tools": "^0.2.0",
+    "size-limit": "^4.9.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.0",
+    "typescript": "^4.1.2"
   },
   "scripts": {
-    "build": "npm run clean && npm run build:commonjs && npm run build:es",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib",
-    "build:es": "cross-env NODE_ENV=production babel src -d es",
-    "watch": "npm run build && watch-run -p 'src/**/*.js' npm run build:es",
-    "clean": "rimraf es && rimraf lib",
-    "lint": "eslint src test",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "validate": "npm run lint && npm test && npm run build && bundlesize",
-    "precommit": "npm run lint && npm test",
-    "prepublishOnly": "npm run build"
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -m es6 --outDir esm",
+    "clean": "del lib/* && del esm/*",
+    "watch:cjs": "npm run build:cjs -- -w",
+    "watch:esm": "npm run build:esm -- -w",
+    "lint": "eslint --ext .ts src test",
+    "test": "jest --bail --coverage",
+    "test:watch": "jest --watchAll --verbose",
+    "validate": "npm run lint && npm test && npm run build && npm run size",
+    "size": "size-limit",
+    "prepublishOnly": "npm run validate"
   },
-  "browserslist": [
-    "> 0.2%",
-    "not dead"
-  ],
-  "bundlesize": [
+  "prettier": {
+    "jsxBracketSameLine": false,
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "size-limit": [
     {
-      "path": "./es/index.js",
-      "maxSize": "2 kB"
+      "path": "./esm/index.js",
+      "limit": "1 kB"
     },
     {
       "path": "./lib/index.js",
-      "maxSize": "2 kB"
+      "limit": "1 kB"
     }
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run validate"
+      "post-merge": "repo-tools install-packages",
+      "pre-commit": "repo-tools check-remote && npm run validate"
     }
   }
 }
