@@ -1,6 +1,4 @@
-.publish
-.tmp
 coverage/
-es/
+esm/
 lib/
 node_modules

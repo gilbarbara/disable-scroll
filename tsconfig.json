@@ -1,0 +1,10 @@
+{
+  "extends": "@gilbarbara/tsconfig",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "./lib",
+    "target": "es5",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}
