@@ -89,7 +89,7 @@ class DisableScroll {
 
     /* istanbul ignore else */
     if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
-      keys = this.options.authorizedInInputs;
+      keys = keys.filter(key => !this.options.authorizedInInputs.includes(key));
     }
 
     /* istanbul ignore else */
